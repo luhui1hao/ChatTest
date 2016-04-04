@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 这是语音信息的Item布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 左边的布局 -->
+
+    <RelativeLayout
+        android:id="@+id/recorder_left_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp" >
+
+        <ImageView
+            android:id="@+id/item_icon_left"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/left_person" />
+
+        <FrameLayout
+            android:id="@+id/recorder_length_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/item_icon_left"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/bubble" >
+
+            <View
+                android:id="@+id/id_recorder_anim_left"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical|left"
+                android:background="@drawable/adj_left" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/recorder_time_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="3dp"
+            android:layout_toRightOf="@id/recorder_length_left"
+            android:text=""
+            android:textColor="#ffffffff" />
+    </RelativeLayout>
+    
+    <!-- 右边的布局 -->
+
+    <RelativeLayout
+        android:id="@+id/recorder_right_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp" >
+
+        <ImageView
+            android:id="@+id/item_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/right_person" />
+
+        <FrameLayout
+            android:id="@+id/recorder_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/item_icon"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/bubbleself" >
+
+            <View
+                android:id="@+id/id_recorder_anim"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical|right"
+                android:background="@drawable/adj" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/recorder_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="3dp"
+            android:layout_toLeftOf="@id/recorder_length"
+            android:text=""
+            android:textColor="#ffffffff" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,203 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 下面是相机界面 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="640dp"
+            android:layout_height="480dp" />
+
+        <RelativeLayout
+            android:id="@+id/right_bar"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/camera_right_bar" >
+
+            <Button
+                android:id="@+id/chatgroup_btn_right_bar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/public_info" />
+
+            <Button
+                android:id="@+id/flash_light_btn"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/chatgroup_btn_right_bar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/flashclose" />
+
+            <Button
+                android:id="@+id/camera_btn"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_below="@id/flash_light_btn"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/camera_btn" />
+
+            <Button
+                android:id="@+id/quit_camera_btn"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/quit_camera" />
+        </RelativeLayout>
+        <!-- 测试加的按钮 -->
+
+        <Button
+            android:id="@+id/my_test_btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/right_bar"
+            android:maxHeight="0dp"
+            android:text="文" />
+
+        <Button
+            android:id="@+id/my_test_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/my_test_btn1"
+            android:layout_toLeftOf="@id/right_bar"
+            android:maxHeight="0dp"
+            android:text="图" />
+
+        <Button
+            android:id="@+id/my_test_btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/my_test_btn2"
+            android:layout_toLeftOf="@id/right_bar"
+            android:maxHeight="0dp"
+            android:text="音" />
+
+        <Button
+            android:id="@+id/my_test_btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/my_test_btn3"
+            android:layout_toLeftOf="@id/right_bar"
+            android:maxHeight="0dp"
+            android:text="Clear" />
+    </RelativeLayout>
+
+    <!-- 下面是聊天界面 -->
+
+    <LinearLayout
+        android:id="@+id/linearLayout_chat"
+        android:layout_width="350dp"
+        android:layout_height="match_parent"
+        android:background="#77000000"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#000000" >
+
+            <TextView
+                android:id="@+id/chakanyuan_bianhao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="查勘员：12345" 
+                android:textColor="#ffffff"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"/>
+
+            <Button
+                android:id="@+id/dadianhua_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null" 
+                android:text="电话：13033516935"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/listView_chat"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:divider="@null"
+            android:dividerHeight="10dp" />
+
+        <!-- ListView和底部栏之间的横线 -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="5dp"
+            android:background="#8b8b8b" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.0"
+            android:paddingBottom="8dp" >
+
+            <com.example.chattest.recorder.AudioRecorderButton
+                android:id="@+id/anzhushuohua_btn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/huatong" />
+
+            <Button
+                android:id="@+id/pic_pic_btn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/anzhushuohua_btn"
+                android:background="@drawable/tupian" />
+
+            <FrameLayout
+                android:id="@+id/framelayout_chat"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/pic_pic_btn"
+                android:background="@drawable/edittext_background" >
+
+                <EditText
+                    android:id="@+id/editText_chat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:hint="请输入文本..."
+                    android:maxLines="2"
+                    android:textSize="13sp" />
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/send_btn"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/framelayout_chat"
+                android:background="@drawable/send_btn"
+                android:text="发送" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>
